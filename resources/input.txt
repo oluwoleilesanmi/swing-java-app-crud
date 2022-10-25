@@ -1,0 +1,13 @@
+1,Baso Sean Tlava,NOVICE,42,5 4 3 4 1,nil,false,nil
+2,Stone John Rich,INTERMEDIATE,38,5 4 3 2 3,nil,nil,100
+3,Ceith Tea Pope,EXPERT,40,5 1 1 4 1,4,nil,nil
+4,Dean March Yolo,NOVICE,66,5 4 4 5 3,2,nil,nil
+5,Cardi Tope Hose,ADVANCED,50,5 5 5 5 5,nil,nil,50
+6,Igebo Gobe Nosa,NOVICE,34,5 4 2 4 2,nil,true,nil
+7,Micheal kobo Torrera,ADVANCED,23,5 3 3 4 3,nil,false,nil
+8,Veronica Tammy Lee,NOVICE,82,5 2 2 3 3,nil,true,nil
+9,Immobile Bandera Bile,NOVICE,70,5 4 4 4 3,nil,nil,20
+10,Fred Archie Mount,EXPERT,50,5 4 5 4 3,7,nil,nil
+11,Drake Pino Zoom,NOVICE,34,5 4 1 4 3,9,nil,nil
+
+Veronica Tammy Lee,NOVICE,82,5 2 2 3 3,nil,true,nil
