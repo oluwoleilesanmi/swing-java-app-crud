@@ -1,4 +1,4 @@
-package main;
+import persistence.Manager;
 
 /**
  * This class is the main entry point of the program.

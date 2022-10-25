@@ -1,4 +1,8 @@
-package main;
+package persistence;
+
+import business.Competitor;
+import business.CompetitorList;
+import presentation.GraphicalUserInterface;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

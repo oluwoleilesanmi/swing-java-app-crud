@@ -1,4 +1,4 @@
-package main;
+package business;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -11,6 +11,7 @@ import java.util.Random;
 import java.util.Scanner;
 
 import common.Level;
+import common.Name;
 
 /**
 * This class containing an arraylist of competitors.

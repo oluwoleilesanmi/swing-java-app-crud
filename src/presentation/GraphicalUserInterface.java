@@ -1,4 +1,4 @@
-package main;
+package presentation;
 
 import javax.swing.*;
 import javax.swing.event.ListSelectionEvent;
@@ -8,6 +8,7 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.DefaultTableModel;
 
 import common.Constant;
+import persistence.Manager;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -134,7 +135,8 @@ public class GraphicalUserInterface extends JFrame implements ItemListener,
         
         // This is a button listener for filtering table to display competitors older than 40.
         ageFilterB.addActionListener(new ActionListener() {
-        	Object[][] objArr = mgr.getTableStore(); ArrayList<Object[]> objList = new ArrayList<Object[]>();
+        	Object[][] objArr = mgr.getTableStore();
+			ArrayList<Object[]> objList = new ArrayList<Object[]>();
         	@Override
 			public void actionPerformed(ActionEvent e) {
         		if(isitAnumStoredAs(str)) {

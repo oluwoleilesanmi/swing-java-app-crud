@@ -1,8 +1,9 @@
-package main;
+package business;
 
 import java.util.ArrayList;
 
 import common.Level;
+import common.Name;
 
 /**
  * This class is an interface implemented by classes: 
