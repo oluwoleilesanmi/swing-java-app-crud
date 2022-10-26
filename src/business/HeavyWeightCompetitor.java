@@ -40,16 +40,8 @@ public class HeavyWeightCompetitor implements Competitor {
 	public void setNumber(int number) {this.number = number;}
 	//get the name object
 	public Name getName() {return name;}
-	//set the name object
-	public void setName(Name name) {this.name = name;}
 	//get the enum object level
 	public Level getLevel() {return level;}
-	//set the enum object level
-	public void setLevel(Level level) {this.level = level;}
-	//get the competitors age
-	public int getAge() {return age;}
-	//set the competitors age
-	public void setAge(int age) {this.age = age;}
 		
 	//helper method to calculate the mean of competitor's score
 	public double average() {
@@ -83,16 +75,8 @@ public class HeavyWeightCompetitor implements Competitor {
 					  "has overall score " + overallScore + ".";
 		return shortDetail;
 	}
-	
-	// Get the enhancer, this is the uncommon attribute amongst other competitor classes.
-	public int getEnhancer() {return enhancer;}
-	
-	// Give the heavyweight boxer a preformance enhancer.
-	// Imagine the enhancer as an attribute measured in volume.
-	// Set the enhancer, this is the uncommon attribute amongst other competitor classes.
-	public void setEnhancer(int enhancer) {this.enhancer = enhancer;}
-	
-	// Check if the heavyweight boxer brought with him some performance enhaners.
+
+	// Check if the heavyweight boxer brought with him some performance enhancers.
 	public String checkForEnhancer() {return (enhancer > 0) ? "some" : "none";}
 	
 	@Override

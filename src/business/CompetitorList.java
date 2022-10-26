@@ -102,8 +102,8 @@ public class CompetitorList {
 	
 	/** 
 	 * update the main store for application
-	 * @param uiqueId is the unique identifier, corresponding to that in store
-	 * @param scroes is an Object string
+	 * @param uniqueId is the unique identifier, corresponding to that in store
+	 * @param scores is an Object string
 	 */
 	public void updateMainStore(Object uniqueId, Object scores) {
 		for (Competitor c : list) {
@@ -225,8 +225,7 @@ public class CompetitorList {
 	 * @return array containing firstname, lastname, middlename
 	 */
 	private String[] splitName(String str) {
-		String[] arr = str.split(" ");
-		return arr;
+		return str.split(" ");
 	}
 	
 	/** 

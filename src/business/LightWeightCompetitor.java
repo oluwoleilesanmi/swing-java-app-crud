@@ -39,21 +39,8 @@ public class LightWeightCompetitor implements Competitor {
 	public void setNumber(int number) {this.number = number;}
 	//get the name object
 	public Name getName() {return name;}
-	//set the name object
-	public void setName(Name name) {this.name = name;}
 	//get the enum object level
 	public Level getLevel() {return level;}
-	//set the enum object level
-	public void setLevel(Level level) {this.level = level;}
-	//get the competitors age
-	public int getAge() {return age;}
-	//set the competitors age
-	public void setAge(int age) {this.age = age;}
-	//get the headGear, this is the uncommon attribute amongst other competitor classes.
-	public boolean isHeadGear() {return headGear;}
-	//set the headGear, this is the uncommon attribute amongst classes competitor classes
-	public void setHeadGear(boolean headGear) {this.headGear = headGear;}
-			
 	//helper method to calculate the mean of competitor's score
 	public double average() {
 		double accumulator = 0;
@@ -61,7 +48,6 @@ public class LightWeightCompetitor implements Competitor {
 		accumulator = accumulator/scores.size();
 		return accumulator;
 	}
-			
 	//helper method to turn an array of numbers to a string
 	public String arrToString() {
 		String str="";

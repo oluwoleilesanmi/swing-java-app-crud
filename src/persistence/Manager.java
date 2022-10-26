@@ -9,8 +9,6 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.InputMismatchException;
-import java.util.Scanner;
 import java.util.Map.Entry;
 import java.util.Set;
 
@@ -25,7 +23,7 @@ import java.util.Set;
  */
 
 public class Manager {
-	private CompetitorList competitors = null;
+	private CompetitorList competitors;
 	private FileWriter writer = null;
 	
 	/** 
@@ -43,19 +41,11 @@ public class Manager {
 	
 	/** 
 	 * The UI table stores its values as string object
-	 * @param uri for file location
+	 * @param uniqueId for file location
 	 */
 	public void updateMainAndTableDs(Object uniqueId, Object scores) {
 		competitors.updateMainStore(uniqueId, scores);
 		competitors.updateTableStore(uniqueId, scores);
-	}
-	
-	/** 
-	 * change the file where competitor class reads data from 
-	 * @param uri for file location
-	 */
-	public void setCompetitors(String uri) {
-		this.competitors = new CompetitorList(uri);
 	}
 	
 	/** 
@@ -64,25 +54,6 @@ public class Manager {
 	 */
 	public Object[][] getTableStore() {
 		return competitors.getTableStore();
-	}
-	/** 
-	 * change the file where competitor class reads data from 
-	 * @param uri for file location
-	 */
-	public CompetitorList getCompetitors() {
-		return this.competitors;
-	}
-	
-	/** 
-	 * change the file that the filewriter writes to
-	 * @param uri for file location
-	 */
-	public void setWriter(String uri) {
-		try {
-			this.writer = new FileWriter(uri);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
 	}
 
 	/** 
@@ -133,7 +104,7 @@ public class Manager {
 	 * @param competitorNum for user number input 
 	 */
 	public String createCompleteReportUI(int competitorNum) {
-		String concat = "";
+		String concat;
 		if(competitors.isValid(competitorNum)) {
 			concat = writeCompetitorFullDetailsUI(competitorNum);
 			concat += printCompetitorShortDetailsUI(competitorNum);
@@ -147,7 +118,7 @@ public class Manager {
 	 * @param num is for storing competitor number
 	 */
 	private void writeCompetitorFullDetails(int num) throws IOException {
-		Competitor competitor = null;
+		Competitor competitor;
 		//check for validity of competitor number
 		if(competitors.isValid(num)) {
 			competitor = competitors.getCompetitor(num);
@@ -161,7 +132,7 @@ public class Manager {
 	 * @param num is for storing competitor number
 	 */
 	private String writeCompetitorFullDetailsUI(int num){
-		Competitor competitor = null;
+		Competitor competitor;
 		//check for validity of competitor number
 		if(competitors.isValid(num)) {
 			competitor = competitors.getCompetitor(num);
@@ -175,7 +146,7 @@ public class Manager {
 	 * @param num is for storing competitor number 
 	 */
 	private void writeCompetitorShortDetails(int num) throws IOException {
-		Competitor competitor = null;
+		Competitor competitor;
 		//check for validity of competitor number
 		if(competitors.isValid(num)) {
 			competitor = competitors.getCompetitor(num);
@@ -189,7 +160,7 @@ public class Manager {
 	 * @param num is for processing competitor number 
 	 */
 	public void printCompetitorShortDetails(int num)  {
-		Competitor competitor = null;
+		Competitor competitor;
 		//check for validity of competitor number
 		if(competitors.isValid(num)) {
 			competitor = competitors.getCompetitor(num);
@@ -204,7 +175,7 @@ public class Manager {
 	 * @return string containing short detail.
 	 */
 	public String printCompetitorShortDetailsUI(int num)  {
-		Competitor competitor = null;
+		Competitor competitor;
 		//check for validity of competitor number
 		if(competitors.isValid(num)) {
 			competitor = competitors.getCompetitor(num);
@@ -293,46 +264,6 @@ public class Manager {
         @SuppressWarnings("unchecked")
 		Entry<Integer,String>[] test = new Entry[maplength];
         return mapValues.toArray(test);
-	}
-	
-	/** 
-	 * executable
-	 */
-	public void run() {
-		int num = 0;
-		Scanner input = null;
-		
-		//accept user input & check if its a valid number
-		try {
-	    	input = new Scanner(System.in); 
-		    System.out.println("\n" +"Please Enter Number greater than or equal to zero: " + "\n");
-		    num = input.nextInt();
-		    //while user input is 0 or a negative number, request the user to re-enter a positive number
-		    while(num < 0){
-		    	System.out.println("Please Enter Number greater than or equal to zero: " + "\n");
-		    	input.nextLine();
-		    	num = input.nextInt();
-		    }
-		    //print to console the short details of the competitor using the number the user entered
-		    printCompetitorShortDetails(num);
-		    
-        } catch (InputMismatchException exception) {
-        	/* if the InputMismatchException is thrown it is caught in this block, the reason is
-    		 * because the user has entered something other than a number.
-    		 * request user to re-enter a number
-    		 */
-          while(true) {
-        	  System.out.println("Please remember to enter number greater than or equal to zero next time:"+ "\n");
-        	  input.nextLine();
-        	  if (input.hasNextInt()) {
-        		  num = input.nextInt();
-        		  printCompetitorShortDetails(num);
-        		  break;
-        	  }
-          }
-        }
-		//write a complete report using input provided by user just entered
-		createCompleteReport(num); 
 	}
 
 }

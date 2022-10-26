@@ -10,9 +10,6 @@ import common.Name;
  * a) FeatherWeightCompetitor. 
  * b) HeavyWeightCompetitor.
  * c) LightWeightCompetitor.
- * 
- * After Reachingout to my lecturer Dr.Gabbay, he permitted 
- * the use of interfaces for my solution.
  *
  * @author  OLUWOLE-ILESANMI
  * @version Version 1
@@ -21,40 +18,31 @@ import common.Name;
 
 public interface Competitor {
 	
-	// All methods below are ment to be implemented in subclasses.
-	public int getNumber();
+	// All methods below are meant to be implemented in subclasses.
+	int getNumber();
 	
-	public void setNumber(int number) ;
+	void setNumber(int number) ;
 	
-	public Name getName();
-	
-	public void setName(Name name);
-	
-	public void setScores(ArrayList<Integer> scores);
-	
-	public Level getLevel() ;
-	
-	public void setLevel(Level level);
-	
-	public int getAge() ;
-	
-	public void setAge(int age);
-		
-	public double average();
-		
-	public String arrToString();
-		
-	public ArrayList<Integer> getScoreArray();
+	Name getName();
 
-	public String getShortDetails();
-	
-	/*
-	* The two abstract methods below have different 
-	* implementations in the classes below
-	* FeatherWeightCompetitor,HeavyWeightCompetitor,
-	* LightWeightCompetitor.
-	*/ 	
-	public double getOverallScore();
+	void setScores(ArrayList<Integer> scores);
+
+	Level getLevel() ;
+
+	double average();
+
+	String arrToString();
+
+	ArrayList<Integer> getScoreArray();
+
+	String getShortDetails();
+
+
+	/**
+	 * below methods have different implementations in classes
+	 * FeatherWeightCompetitor, HeavyWeightCompetitor, LightWeightCompetitor
+	 */
+	double getOverallScore();
 		
-	public String getFullDetails();
+	String getFullDetails();
 }
